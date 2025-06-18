@@ -281,6 +281,32 @@
             margin-top: 20px;
             margin-bottom: 25px;
         }
+
+        .print-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 6px;
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: white;
+            text-decoration: none;
+            font-size: 0.85em;
+            min-width: 100px;
+            justify-content: center;
+        }
+
+        .print-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .print-icon {
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
@@ -300,11 +326,17 @@
                     Español
                 </a>
             </div>
+            <div style="position: absolute; top: 20px; left: 30px;">
+                <a href="#" class="print-btn" id="printBtn">
+                    <span class="print-icon">🖨️</span>
+                    PDF
+                </a>
+            </div>
             <h1 data-i18n="name">Thiago Santana De Oliveira Marques</h1>
             <div class="contact-info">
                 <div class="contact-item">
                     <span>📞</span>
-                    <span>(61) 9 9922-0194</span>
+                    <a href="https://wa.me/5561999220194" target="_blank">(61) 9 9922-0194</a>
                 </div>
                 <div class="contact-item">
                     <span>✉️</span>
@@ -673,6 +705,7 @@
     <!-- i18next Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/i18next@23.7.11/dist/umd/i18next.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.2.0/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     
     <script>
         // Initialize i18next
@@ -681,6 +714,7 @@
             .init({
                 debug: false,
                 fallbackLng: 'pt',
+                lng: 'pt',
                 resources: {
                     pt: {
                         translation: {
@@ -723,7 +757,7 @@
                             wiz_exp2: "Uso de boas práticas de desenvolvimento, como Lazy Loading, CommitLint e ESLint",
                             wiz_exp3: "Participação de grupos de discussões sobre tecnologias para uso no front-end",
                             wiz_exp4: "Uso de metodologias Scrum e semelhantes",
-                            wiz_exp5: "Uso de tecnologias do Microsoft Azure (Azure DevOps, Teams, Application Insights)",
+                            wiz_exp5: "Uso de tecnologias do Microsoft Azure (Azure Devops, Teams, Application Insights)",
                             wiz_exp6: "Adequação dos projetos ao Sonar Cloud (Sonar Lint) para qualidade e segurança do código",
                             wiz_exp7: "Uso de Jasmine para testes unitários",
                             wiz_exp8: "Estruturação de novas aplicações frontend",
@@ -920,7 +954,7 @@
                             teacher_exp1: "Actué en el Programa de Residencia Pedagógica en el área de Computación enseñando lógica de programación utilizando Python, JavaScript, HTML y CSS",
                             teacher_exp2: "Desarrollo del sitio web de la escuela GISNO",
                             teacher_exp3: "Tutoría para profesores en la enseñanza general de computación",
-                            stefanini_exp1: "Actué como analista de soporte, monitoreando servicios de red de la Caixa Económica Federal",
+                            stefanini_exp1: "Actué como analista de soporte, monitoreando servicios de red de la Caixa Econômica Federal",
                             stefanini_exp2: "Utilicé herramientas remotas para mantener la disponibilidad de los servicios, garantizando un funcionamiento continuo y sin interrupciones",
                             stefanini_exp3: "Trabajé con herramientas de verificación de disponibilidad, como NAGIOS",
                             stefanini_exp4: "Utilicé herramientas remotas para la verificación de servidores, asegurando la eficiencia y la confiabilidad de los sistemas",
@@ -948,6 +982,44 @@
             });
         }
 
+        // PDF Generation Function
+        function generatePDF() {
+            // Hide language switcher and print button for PDF
+            const languageSwitcher = document.querySelector('.language-switcher');
+            const printButton = document.querySelector('#printBtn').parentElement;
+            const originalDisplay = {
+                languageSwitcher: languageSwitcher.style.display,
+                printButton: printButton.style.display
+            };
+            
+            languageSwitcher.style.display = 'none';
+            printButton.style.display = 'none';
+
+            // PDF options
+            const opt = {
+                margin: [10, 10, 10, 10],
+                filename: 'Thiago_Marques_CV.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { 
+                    scale: 2,
+                    useCORS: true,
+                    letterRendering: true
+                },
+                jsPDF: { 
+                    unit: 'mm', 
+                    format: 'a4', 
+                    orientation: 'portrait' 
+                }
+            };
+
+            // Generate PDF
+            html2pdf().set(opt).from(document.querySelector('.container')).save().then(() => {
+                // Restore original display
+                languageSwitcher.style.display = originalDisplay.languageSwitcher;
+                printButton.style.display = originalDisplay.printButton;
+            });
+        }
+
         // Language switcher functionality
         document.addEventListener('DOMContentLoaded', function() {
             // Set initial language
@@ -971,6 +1043,12 @@
                         document.documentElement.lang = lang;
                     });
                 });
+            });
+
+            // PDF button event listener
+            document.getElementById('printBtn').addEventListener('click', function(e) {
+                e.preventDefault();
+                generatePDF();
             });
         });
     </script>
