@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thiago Santana De Oliveira Marques - Desenvolvedor Front-End</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
     <style>
         * {
             margin: 0;
@@ -28,8 +29,50 @@
         .header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 40px 30px;
+            padding: 60px 30px 40px;
             text-align: center;
+            position: relative;
+        }
+
+        .language-switcher {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .language-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 6px;
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: white;
+            text-decoration: none;
+            font-size: 0.85em;
+            min-width: 100px;
+            justify-content: center;
+        }
+
+        .language-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .language-btn.active {
+            background: rgba(255, 255, 255, 0.4);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        .flag-icon {
+            width: 20px;
+            height: 15px;
+            border-radius: 2px;
         }
 
         .header h1 {
@@ -199,6 +242,12 @@
                 font-size: 2em;
             }
 
+            .language-switcher {
+                position: static;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+
             .contact-info {
                 flex-direction: column;
                 gap: 10px;
@@ -222,12 +271,36 @@
                 font-size: 0.8em;
             }
         }
+
+        .qualifications_para5 {
+            font-weight: 600;
+            background-color: rgba(102, 126, 234, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            margin-top: 20px;
+            margin-bottom: 25px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>Thiago Santana De Oliveira Marques</h1>
+            <div class="language-switcher">
+                <a href="#" class="language-btn active" data-lang="pt">
+                    <span class="flag-icon fi fi-br"></span>
+                    Português
+                </a>
+                <a href="#" class="language-btn" data-lang="en">
+                    <span class="flag-icon fi fi-us"></span>
+                    English
+                </a>
+                <a href="#" class="language-btn" data-lang="es">
+                    <span class="flag-icon fi fi-es"></span>
+                    Español
+                </a>
+            </div>
+            <h1 data-i18n="name">Thiago Santana De Oliveira Marques</h1>
             <div class="contact-info">
                 <div class="contact-item">
                     <span>📞</span>
@@ -246,23 +319,23 @@
                     <a href="https://github.com/thiagomarques" target="_blank">GitHub</a>
                 </div>
             </div>
-            <p style="margin-top: 15px; font-size: 0.9em;">Brasileiro, 34 anos, Casado</p>
+            <p style="margin-top: 15px; font-size: 0.9em;" data-i18n="personal_info">Brasileiro, 35 anos, Casado</p>
         </div>
 
         <div class="section">
-            <h2>Síntese das Qualificações</h2>
-            <p>Profissional graduado em Computação pela Universidade de Brasília, com certificação em desenvolvimento front-end, com mais de 15 anos de experiência na área de tecnologia da informação, atuando em empresas nacionais e multinacionais de grande porte (Serpro, Fiocruz, Wiz Co, Stefanini, OmegaTI/Focus), destacando-se os segmentos de seguros, serviços em TI, transformação digital, suporte técnico e vendas de soluções tecnológicas.</p>
+            <h2 data-i18n="qualifications_summary">Síntese das Qualificações</h2>
+            <p data-i18n="qualifications_para1">Profissional graduado em Computação pela Universidade de Brasília, com certificação em desenvolvimento front-end, com mais de 15 anos de experiência na área de tecnologia da informação, atuando em empresas nacionais e multinacionais de grande porte (Serpro, Fiocruz, Wiz Co, Stefanini, OmegaTI/Focus), destacando-se os segmentos de seguros, serviços em TI, transformação digital, suporte técnico e vendas de soluções tecnológicas.</p>
             
-            <p>Experiência em desenvolvimento de aplicações web utilizando frameworks modernos (Angular, React, Vue), além de ampla experiência em integrações com APIs REST, arquitetura de micro-frontends, e implementação de práticas ágeis como Scrum. Domínio em ferramentas e tecnologias como Azure DevOps, SonarCloud, Jasmine para testes unitários, e pipelines CI/CD para implantação em ambientes de homologação e produção.</p>
+            <p data-i18n="qualifications_para2">Experiência em desenvolvimento de aplicações web utilizando frameworks modernos (Angular, React, Vue), além de ampla experiência em integrações com APIs REST, arquitetura de micro-frontends, e implementação de práticas ágeis como Scrum. Domínio em ferramentas e tecnologias como Azure DevOps, SonarCloud, Jasmine para testes unitários, e pipelines CI/CD para implantação em ambientes de homologação e produção.</p>
             
-            <p>Habilidade na criação de interfaces dinâmicas e responsivas, desenvolvimento de componentes reutilizáveis e soluções escaláveis, alinhando qualidade técnica com as melhores práticas de desenvolvimento. Além disso, conta com experiência em projetos de EAD, suporte técnico, versionamento com Git, e ensino de lógica de programação em linguagens com Python e JavaScript.</p>
+            <p data-i18n="qualifications_para3">Habilidade na criação de interfaces dinâmicas e responsivas, desenvolvimento de componentes reutilizáveis e soluções escaláveis, alinhando qualidade técnica com as melhores práticas de desenvolvimento. Além disso, conta com experiência em projetos de EAD, suporte técnico, versionamento com Git, e ensino de lógica de programação em linguagens com Python e JavaScript.</p>
             
-            <p>Experiência sólida em infraestrutura de TI, incluindo gerenciamento de servidores Windows e Linux, rotinas de backup, monitoramento de sistemas com ferramentas como NAGIOS, e suporte técnico especializado. Conhecimento em soluções de impressão e documentação (Xerox FreeFlow, Fiery), sistemas de gestão documental (Neokoros DOKEO), virtualização (VMware) e hardware empresarial (IBM System X).</p>
+            <p data-i18n="qualifications_para4">Experiência sólida em infraestrutura de TI, incluindo gerenciamento de servidores Windows e Linux, rotinas de backup, monitoramento de sistemas com ferramentas como NAGIOS, e suporte técnico especializado. Conhecimento em soluções de impressão e documentação (Xerox FreeFlow, Fiery), sistemas de gestão documental (Neokoros DOKEO), virtualização (VMware) e hardware empresarial (IBM System X).</p>
             
-            <p>Profissional altamente capacitado para trabalhar em equipe, dedicado às funções e focado em resultados. Comunicativo, flexível, organizado, responsável, com forte capacidade de adaptação e aprendizado contínuo.</p>
+            <p data-i18n="qualifications_para5" class="qualifications_para5">Profissional altamente capacitado para trabalhar em equipe, dedicado às funções e focado em resultados. Comunicativo, flexível, organizado, responsável, com forte capacidade de adaptação e aprendizado contínuo.</p>
 
             <div class="keywords">
-                <span class="keyword">Desenvolvimento Web</span>
+                <span class="keyword" data-i18n="keyword_web_dev">Desenvolvimento Web</span>
                 <span class="keyword">Angular</span>
                 <span class="keyword">React</span>
                 <span class="keyword">Vue</span>
@@ -273,7 +346,7 @@
                 <span class="keyword">Scrum</span>
                 <span class="keyword">Azure DevOps</span>
                 <span class="keyword">SonarCloud</span>
-                <span class="keyword">Testes Unitários</span>
+                <span class="keyword" data-i18n="keyword_unit_tests">Testes Unitários</span>
                 <span class="keyword">CI/CD</span>
                 <span class="keyword">TypeScript</span>
                 <span class="keyword">JavaScript</span>
@@ -284,8 +357,8 @@
                 <span class="keyword">PostgreSQL</span>
                 <span class="keyword">Linux</span>
                 <span class="keyword">Windows Server</span>
-                <span class="keyword">Suporte Técnico</span>
-                <span class="keyword">Monitoramento</span>
+                <span class="keyword" data-i18n="keyword_tech_support">Suporte Técnico</span>
+                <span class="keyword" data-i18n="keyword_monitoring">Monitoramento</span>
                 <span class="keyword">NAGIOS</span>
                 <span class="keyword">VMware</span>
                 <span class="keyword">Xerox Solutions</span>
@@ -294,19 +367,19 @@
         </div>
 
         <div class="section">
-            <h2>Formação Acadêmica</h2>
+            <h2 data-i18n="academic_formation">Formação Acadêmica</h2>
             <div class="education-item">
-                <h3>Graduação em Computação</h3>
-                <p>Universidade de Brasília – UnB | Concluído em 2022</p>
+                <h3 data-i18n="computer_science">Graduação em Computação</h3>
+                <p data-i18n="unb_graduation">Universidade de Brasília – UnB | Concluído em 2022</p>
             </div>
             <div class="education-item">
-                <h3>Pós-graduação em Engenharia de Software</h3>
-                <p>Faculdade Metropolitana | Concluído em 2022</p>
+                <h3 data-i18n="software_engineering">Pós-graduação em Engenharia de Software</h3>
+                <p data-i18n="metropolitan_postgrad">Faculdade Metropolitana | Concluído em 2022</p>
             </div>
         </div>
 
         <div class="section">
-            <h2>Formação Complementar</h2>
+            <h2 data-i18n="complementary_formation">Formação Complementar</h2>
             <div class="course-item">
                 <h3>Lógica Orientada a Objetos</h3>
                 <p>Treinaweb</p>
@@ -410,7 +483,7 @@
         </div>
 
         <div class="section">
-            <h2>Conhecimentos Técnicos</h2>
+            <h2 data-i18n="technical_knowledge">Conhecimentos Técnicos</h2>
             <div class="skills">
                 <span class="skill">Git</span>
                 <span class="skill">IONIC</span>
@@ -453,148 +526,453 @@
         </div>
 
         <div class="section">
-            <h2>Experiência Profissional</h2>
+            <h2 data-i18n="professional_experience">Experiência Profissional</h2>
             
             <div class="experience-item">
                 <div class="experience-header">
-                    <div class="experience-title">Desenvolvedor Front-End</div>
+                    <div class="experience-title" data-i18n="frontend_developer">Desenvolvedor Front-End</div>
                     <div class="experience-period">09/2021 - Atual</div>
                 </div>
                 <div class="experience-company">WIZ CO</div>
                 <ul class="experience-description">
-                    <li>Atuo no desenvolvimento de aplicações Web utilizando o framework Angular, integração com API's (REST)</li>
-                    <li>Uso de boas práticas de desenvolvimento, como Lazy Loading, CommitLint e ESLint</li>
-                    <li>Participação de grupos de discussões sobre tecnologias para uso no front-end</li>
-                    <li>Uso de metodologias Scrum e semelhantes</li>
-                    <li>Uso de tecnologias do Microsoft Azure (Azure Devops, Teams, Application Insigths)</li>
-                    <li>Adequação dos projetos ao Sonar Cloud (Sonar Lint) para qualidade e segurança do código</li>
-                    <li>Uso de Jasmine para testes unitários</li>
-                    <li>Estruturação de novas aplicações frontend</li>
-                    <li>Deploy de aplicações para ambientes de homologação e produção</li>
-                    <li>Desenvolvimento de componentes e módulos reutilizáveis em Angular, otimizados para um sistema Whitelabel e Multitenant</li>
-                    <li>Integração de aplicações utilizando arquitetura de micro-frontend para promover modularidade e escalabilidade</li>
-                    <li>Ajustes no pipeline para subidas dos projetos. Otimização e configuração de SEO, revisão e otimização de códigos</li>
+                    <li data-i18n="wiz_exp1">Atuo no desenvolvimento de aplicações Web utilizando o framework Angular, integração com API's (REST)</li>
+                    <li data-i18n="wiz_exp2">Uso de boas práticas de desenvolvimento, como Lazy Loading, CommitLint e ESLint</li>
+                    <li data-i18n="wiz_exp3">Participação de grupos de discussões sobre tecnologias para uso no front-end</li>
+                    <li data-i18n="wiz_exp4">Uso de metodologias Scrum e semelhantes</li>
+                    <li data-i18n="wiz_exp5">Uso de tecnologias do Microsoft Azure (Azure Devops, Teams, Application Insights)</li>
+                    <li data-i18n="wiz_exp6">Adequação dos projetos ao Sonar Cloud (Sonar Lint) para qualidade e segurança do código</li>
+                    <li data-i18n="wiz_exp7">Uso de Jasmine para testes unitários</li>
+                    <li data-i18n="wiz_exp8">Estruturação de novas aplicações frontend</li>
+                    <li data-i18n="wiz_exp9">Deploy de aplicações para ambientes de homologação e produção</li>
+                    <li data-i18n="wiz_exp10">Desenvolvimento de componentes e módulos reutilizáveis em Angular, otimizados para um sistema Whitelabel e Multitenant</li>
+                    <li data-i18n="wiz_exp11">Integração de aplicações utilizando arquitetura de micro-frontend para promover modularidade e escalabilidade</li>
+                    <li data-i18n="wiz_exp12">Ajustes no pipeline para subidas dos projetos. Otimização e configuração de SEO, revisão e otimização de códigos</li>
                 </ul>
             </div>
 
             <div class="experience-item">
                 <div class="experience-header">
-                    <div class="experience-title">Desenvolvedor Front-End</div>
+                    <div class="experience-title" data-i18n="frontend_developer">Desenvolvedor Front-End</div>
                     <div class="experience-period">02/2020 - 09/2021</div>
                 </div>
                 <div class="experience-company">FIOCRUZ</div>
                 <ul class="experience-description">
-                    <li>Atuei desenvolvendo soluções educacionais para integração com o Ambiente Virtual de Aprendizagem (AVA/Moodle) utilizando framework Bootstrap, PHP, HTML, CSS e Javascript</li>
-                    <li>Uso de persistência de dados (PPU – UNASUS) nos artefatos</li>
-                    <li>Criação de protótipos navegáveis</li>
-                    <li>Correção de bugs e atualização de software</li>
-                    <li>Consumo de dados JSON</li>
-                    <li>Criação de documentações/manuais de sistemas</li>
-                    <li>Versionamento de artefatos usando GIT</li>
-                    <li>Apoio técnico para plataformas de ensino a distância (EAD) – AVA Moodle</li>
+                    <li data-i18n="fiocruz_exp1">Atuei desenvolvendo soluções educacionais para integração com o Ambiente Virtual de Aprendizagem (AVA/Moodle) utilizando framework Bootstrap, PHP, HTML, CSS e Javascript</li>
+                    <li data-i18n="fiocruz_exp2">Uso de persistência de dados (PPU – UNASUS) nos artefatos</li>
+                    <li data-i18n="fiocruz_exp3">Criação de protótipos navegáveis</li>
+                    <li data-i18n="fiocruz_exp4">Correção de bugs e atualização de software</li>
+                    <li data-i18n="fiocruz_exp5">Consumo de dados JSON</li>
+                    <li data-i18n="fiocruz_exp6">Criação de documentações/manuais de sistemas</li>
+                    <li data-i18n="fiocruz_exp7">Versionamento de artefatos usando GIT</li>
+                    <li data-i18n="fiocruz_exp8">Apoio técnico para plataformas de ensino a distância (EAD) – AVA Moodle</li>
                 </ul>
             </div>
 
             <div class="experience-item">
                 <div class="experience-header">
-                    <div class="experience-title">Estágio em desenvolvimento Front-End</div>
+                    <div class="experience-title" data-i18n="frontend_internship">Estágio em desenvolvimento Front-End</div>
                     <div class="experience-period">02/2020 - 09/2021</div>
                 </div>
                 <div class="experience-company">SERPRO</div>
                 <ul class="experience-description">
-                    <li>Atuei como auxiliar de desenvolvedor FrontEnd</li>
-                    <li>Desenvolvi componentes usando HTML5, CSS3 e JavaScript utilizando framework Angular, Bootstrap e IONIC para criar protótipos navegáveis</li>
-                    <li>Criação de documentações/manuais de sistemas</li>
-                    <li>Versionamento de artefatos usando GIT</li>
-                    <li>Uso de persistência de dados</li>
-                    <li>Consulta em banco de dados SQL (POSTGRE), NodeJS, Chrome DevTools</li>
-                    <li>Consumo de dados com REST/JSON</li>
-                    <li>Apoio para criação de estilos usando pré-processadores SASS</li>
+                    <li data-i18n="serpro_exp1">Atuei como auxiliar de desenvolvedor FrontEnd</li>
+                    <li data-i18n="serpro_exp2">Desenvolvi componentes usando HTML5, CSS3 e JavaScript utilizando framework Angular, Bootstrap e IONIC para criar protótipos navegáveis</li>
+                    <li data-i18n="serpro_exp3">Criação de documentações/manuais de sistemas</li>
+                    <li data-i18n="serpro_exp4">Versionamento de artefatos usando GIT</li>
+                    <li data-i18n="serpro_exp5">Uso de persistência de dados</li>
+                    <li data-i18n="serpro_exp6">Consulta em banco de dados SQL (POSTGRE), NodeJS, Chrome DevTools</li>
+                    <li data-i18n="serpro_exp7">Consumo de dados com REST/JSON</li>
+                    <li data-i18n="serpro_exp8">Apoio para criação de estilos usando pré-processadores SASS</li>
                 </ul>
             </div>
 
             <div class="experience-item">
                 <div class="experience-header">
-                    <div class="experience-title">Professor Residente</div>
+                    <div class="experience-title" data-i18n="resident_teacher">Professor Residente</div>
                     <div class="experience-period">09/2018 - 01/2021</div>
                 </div>
-                <div class="experience-company">Residência Pedagógica</div>
+                <div class="experience-company" data-i18n="pedagogical_residency">Residência Pedagógica</div>
                 <ul class="experience-description">
-                    <li>Atuei no Programa de Residência Pedagógica na área de Computação ensinando lógica de programação utilizando Python, JavaScript, HTML e CSS</li>
-                    <li>Desenvolvimento do site da escola GISNO</li>
-                    <li>Tutoria para professores no ensino geral de computação</li>
+                    <li data-i18n="teacher_exp1">Atuei no Programa de Residência Pedagógica na área de Computação ensinando lógica de programação utilizando Python, JavaScript, HTML e CSS</li>
+                    <li data-i18n="teacher_exp2">Desenvolvimento do site da escola GISNO</li>
+                    <li data-i18n="teacher_exp3">Tutoria para professores no ensino geral de computação</li>
                 </ul>
             </div>
 
             <div class="experience-item">
                 <div class="experience-header">
-                    <div class="experience-title">Analista de Suporte</div>
+                    <div class="experience-title" data-i18n="support_analyst">Analista de Suporte</div>
                     <div class="experience-period">08/2016 - 10/2016</div>
                 </div>
                 <div class="experience-company">Stefanini</div>
                 <ul class="experience-description">
-                    <li>Atuei como analista de suporte, monitorando serviços de rede da Caixa Econômica Federal</li>
-                    <li>Utilizei ferramentas remotas para manter a disponibilidade dos serviços, garantindo um funcionamento contínuo e sem interrupções</li>
-                    <li>Trabalhei com ferramentas de verificação de disponibilidade, como NAGIOS</li>
-                    <li>Utilizei ferramentas remotas para a verificação de servidores, assegurando a eficiência e a confiabilidade dos sistemas</li>
+                    <li data-i18n="stefanini_exp1">Atuei como analista de suporte, monitorando serviços de rede da Caixa Econômica Federal</li>
+                    <li data-i18n="stefanini_exp2">Utilizei ferramentas remotas para manter a disponibilidade dos serviços, garantindo um funcionamento contínuo e sem interrupções</li>
+                    <li data-i18n="stefanini_exp3">Trabalhei com ferramentas de verificação de disponibilidade, como NAGIOS</li>
+                    <li data-i18n="stefanini_exp4">Utilizei ferramentas remotas para a verificação de servidores, assegurando a eficiência e a confiabilidade dos sistemas</li>
                 </ul>
             </div>
 
             <div class="experience-item">
                 <div class="experience-header">
-                    <div class="experience-title">Analista de Sistemas</div>
+                    <div class="experience-title" data-i18n="systems_analyst">Analista de Sistemas</div>
                     <div class="experience-period">08/2010 - 07/2016</div>
                 </div>
                 <div class="experience-company">OmegaTI / Focus</div>
                 <ul class="experience-description">
-                    <li>Atuei como analista de sistemas pré-vendas e pós-venda para representar as marcas Xerox, Lexmark e Sharp</li>
-                    <li>Minhas atribuições eram desde a análise de edital para concorrência em licitações até o suporte final aos clientes</li>
-                    <li>Ministrei treinamentos e prestei auxílio aos técnicos da empresa em chamados externos controlados por SLA</li>
+                    <li data-i18n="omegati_exp1">Atuei como analista de sistemas pré-vendas e pós-venda para representar as marcas Xerox, Lexmark e Sharp</li>
+                    <li data-i18n="omegati_exp2">Minhas atribuições eram desde a análise de edital para concorrência em licitações até o suporte final aos clientes</li>
+                    <li data-i18n="omegati_exp3">Ministrei treinamentos e prestei auxílio aos técnicos da empresa em chamados externos controlados por SLA</li>
                 </ul>
             </div>
 
             <div class="experience-item">
                 <div class="experience-header">
-                    <div class="experience-title">Instrutor de Informática</div>
+                    <div class="experience-title" data-i18n="computer_instructor">Instrutor de Informática</div>
                     <div class="experience-period">03/2009 - 09/2009</div>
                 </div>
                 <div class="experience-company">New Value</div>
                 <ul class="experience-description">
-                    <li>Ministrei cursos de sistemas operacionais Windows</li>
-                    <li>Ensinei Pacote Office</li>
-                    <li>Ministrei cursos de montagem e configuração de computadores</li>
-                    <li>Ensinei noções básicas de redes de computadores</li>
+                    <li data-i18n="instructor_exp1">Ministrei cursos de sistemas operacionais Windows</li>
+                    <li data-i18n="instructor_exp2">Ensinei Pacote Office</li>
+                    <li data-i18n="instructor_exp3">Ministrei cursos de montagem e configuração de computadores</li>
+                    <li data-i18n="instructor_exp4">Ensinei noções básicas de redes de computadores</li>
                 </ul>
             </div>
 
             <div class="experience-item">
                 <div class="experience-header">
-                    <div class="experience-title">Estágio na área de TI</div>
+                    <div class="experience-title" data-i18n="it_internship">Estágio na área de TI</div>
                     <div class="experience-period">03/2008 - 03/2009</div>
                 </div>
-                <div class="experience-company">E.Labore Consultoria estratégica em meio ambiente</div>
+                <div class="experience-company" data-i18n="elabore_company">E.Labore Consultoria estratégica em meio ambiente</div>
                 <ul class="experience-description">
-                    <li>Assistência técnica em estações de trabalho Linux e Windows</li>
-                    <li>Gerenciamento de servidores Windows e Linux</li>
-                    <li>Rotinas de backup</li>
-                    <li>Gerenciamento do parque de impressão</li>
+                    <li data-i18n="elabore_exp1">Assistência técnica em estações de trabalho Linux e Windows</li>
+                    <li data-i18n="elabore_exp2">Gerenciamento de servidores Windows e Linux</li>
+                    <li data-i18n="elabore_exp3">Rotinas de backup</li>
+                    <li data-i18n="elabore_exp4">Gerenciamento do parque de impressão</li>
                 </ul>
             </div>
         </div>
 
         <div class="section">
-            <h2>Idiomas</h2>
+            <h2 data-i18n="languages">Idiomas</h2>
             <div class="languages">
                 <div class="language-item">
-                    <div class="language-name">Inglês</div>
-                    <div class="language-level">Intermediário</div>
+                    <div class="language-name" data-i18n="english">Inglês</div>
+                    <div class="language-level" data-i18n="intermediate">Intermediário</div>
                 </div>
                 <div class="language-item">
-                    <div class="language-name">Espanhol</div>
-                    <div class="language-level">Básico</div>
+                    <div class="language-name" data-i18n="spanish">Espanhol</div>
+                    <div class="language-level" data-i18n="basic">Básico</div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- i18next Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/i18next@23.7.11/dist/umd/i18next.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.2.0/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
+    
+    <script>
+        // Initialize i18next
+        i18next
+            .use(i18nextBrowserLanguageDetector)
+            .init({
+                debug: false,
+                fallbackLng: 'pt',
+                resources: {
+                    pt: {
+                        translation: {
+                            name: "Thiago Santana De Oliveira Marques",
+                            personal_info: "Brasileiro, 35 anos, Casado",
+                            qualifications_summary: "Síntese das Qualificações",
+                            qualifications_para1: "Profissional graduado em Computação pela Universidade de Brasília, com certificação em desenvolvimento front-end, com mais de 15 anos de experiência na área de tecnologia da informação, atuando em empresas nacionais e multinacionais de grande porte (Serpro, Fiocruz, Wiz Co, Stefanini, OmegaTI/Focus), destacando-se os segmentos de seguros, serviços em TI, transformação digital, suporte técnico e vendas de soluções tecnológicas.",
+                            qualifications_para2: "Experiência em desenvolvimento de aplicações web utilizando frameworks modernos (Angular, React, Vue), além de ampla experiência em integrações com APIs REST, arquitetura de micro-frontends, e implementação de práticas ágeis como Scrum. Domínio em ferramentas e tecnologias como Azure DevOps, SonarCloud, Jasmine para testes unitários, e pipelines CI/CD para implantação em ambientes de homologação e produção.",
+                            qualifications_para3: "Habilidade na criação de interfaces dinâmicas e responsivas, desenvolvimento de componentes reutilizáveis e soluções escaláveis, alinhando qualidade técnica com as melhores práticas de desenvolvimento. Além disso, conta com experiência em projetos de EAD, suporte técnico, versionamento com Git, e ensino de lógica de programação em linguagens com Python e JavaScript.",
+                            qualifications_para4: "Experiência sólida em infraestrutura de TI, incluindo gerenciamento de servidores Windows e Linux, rotinas de backup, monitoramento de sistemas com ferramentas como NAGIOS, e suporte técnico especializado. Conhecimento em soluções de impressão e documentação (Xerox FreeFlow, Fiery), sistemas de gestão documental (Neokoros DOKEO), virtualização (VMware) e hardware empresarial (IBM System X).",
+                            qualifications_para5: "Profissional altamente capacitado para trabalhar em equipe, dedicado às funções e focado em resultados. Comunicativo, flexível, organizado, responsável, com forte capacidade de adaptação e aprendizado contínuo.",
+                            keyword_web_dev: "Desenvolvimento Web",
+                            keyword_unit_tests: "Testes Unitários",
+                            keyword_tech_support: "Suporte Técnico",
+                            keyword_monitoring: "Monitoramento",
+                            academic_formation: "Formação Acadêmica",
+                            computer_science: "Graduação em Computação",
+                            unb_graduation: "Universidade de Brasília – UnB | Concluído em 2022",
+                            software_engineering: "Pós-graduação em Engenharia de Software",
+                            metropolitan_postgrad: "Faculdade Metropolitana | Concluído em 2022",
+                            complementary_formation: "Formação Complementar",
+                            technical_knowledge: "Conhecimentos Técnicos",
+                            professional_experience: "Experiência Profissional",
+                            frontend_developer: "Desenvolvedor Front-End",
+                            frontend_internship: "Estágio em desenvolvimento Front-End",
+                            resident_teacher: "Professor Residente",
+                            pedagogical_residency: "Residência Pedagógica",
+                            support_analyst: "Analista de Suporte",
+                            systems_analyst: "Analista de Sistemas",
+                            computer_instructor: "Instrutor de Informática",
+                            it_internship: "Estágio na área de TI",
+                            elabore_company: "E.Labore Consultoria estratégica em meio ambiente",
+                            languages: "Idiomas",
+                            english: "Inglês",
+                            spanish: "Espanhol",
+                            intermediate: "Intermediário",
+                            basic: "Básico",
+                            // Experience descriptions
+                            wiz_exp1: "Atuo no desenvolvimento de aplicações Web utilizando o framework Angular, integração com API's (REST)",
+                            wiz_exp2: "Uso de boas práticas de desenvolvimento, como Lazy Loading, CommitLint e ESLint",
+                            wiz_exp3: "Participação de grupos de discussões sobre tecnologias para uso no front-end",
+                            wiz_exp4: "Uso de metodologias Scrum e semelhantes",
+                            wiz_exp5: "Uso de tecnologias do Microsoft Azure (Azure DevOps, Teams, Application Insights)",
+                            wiz_exp6: "Adequação dos projetos ao Sonar Cloud (Sonar Lint) para qualidade e segurança do código",
+                            wiz_exp7: "Uso de Jasmine para testes unitários",
+                            wiz_exp8: "Estruturação de novas aplicações frontend",
+                            wiz_exp9: "Deploy de aplicações para ambientes de homologação e produção",
+                            wiz_exp10: "Desenvolvimento de componentes e módulos reutilizáveis em Angular, otimizados para um sistema Whitelabel e Multitenant",
+                            wiz_exp11: "Integração de aplicações utilizando arquitetura de micro-frontend para promover modularidade e escalabilidade",
+                            wiz_exp12: "Ajustes no pipeline para subidas dos projetos. Otimização e configuração de SEO, revisão e otimização de códigos",
+                            fiocruz_exp1: "Atuei desenvolvendo soluções educacionais para integração com o Ambiente Virtual de Aprendizagem (AVA/Moodle) utilizando framework Bootstrap, PHP, HTML, CSS e Javascript",
+                            fiocruz_exp2: "Uso de persistência de dados (PPU – UNASUS) nos artefatos",
+                            fiocruz_exp3: "Criação de protótipos navegáveis",
+                            fiocruz_exp4: "Correção de bugs e atualização de software",
+                            fiocruz_exp5: "Consumo de dados JSON",
+                            fiocruz_exp6: "Criação de documentações/manuais de sistemas",
+                            fiocruz_exp7: "Versionamento de artefatos usando GIT",
+                            fiocruz_exp8: "Apoio técnico para plataformas de ensino a distância (EAD) – AVA Moodle",
+                            serpro_exp1: "Atuei como auxiliar de desenvolvedor FrontEnd",
+                            serpro_exp2: "Desenvolvi componentes usando HTML5, CSS3 e JavaScript utilizando framework Angular, Bootstrap e IONIC para criar protótipos navegáveis",
+                            serpro_exp3: "Criação de documentações/manuais de sistemas",
+                            serpro_exp4: "Versionamento de artefatos usando GIT",
+                            serpro_exp5: "Uso de persistência de dados",
+                            serpro_exp6: "Consulta em banco de dados SQL (POSTGRE), NodeJS, Chrome DevTools",
+                            serpro_exp7: "Consumo de dados com REST/JSON",
+                            serpro_exp8: "Apoio para criação de estilos usando pré-processadores SASS",
+                            teacher_exp1: "Atuei no Programa de Residência Pedagógica na área de Computação ensinando lógica de programação utilizando Python, JavaScript, HTML e CSS",
+                            teacher_exp2: "Desenvolvimento do site da escola GISNO",
+                            teacher_exp3: "Tutoria para professores no ensino geral de computação",
+                            stefanini_exp1: "Atuei como analista de suporte, monitorando serviços de rede da Caixa Econômica Federal",
+                            stefanini_exp2: "Utilizei ferramentas remotas para manter a disponibilidade dos serviços, garantindo um funcionamento contínuo e sem interrupções",
+                            stefanini_exp3: "Trabalhei com ferramentas de verificação de disponibilidade, como NAGIOS",
+                            stefanini_exp4: "Utilizei ferramentas remotas para a verificação de servidores, assegurando a eficiência e a confiabilidade dos sistemas",
+                            omegati_exp1: "Atuei como analista de sistemas pré-vendas e pós-venda para representar as marcas Xerox, Lexmark e Sharp",
+                            omegati_exp2: "Minhas atribuições eram desde a análise de edital para concorrência em licitações até o suporte final aos clientes",
+                            omegati_exp3: "Ministrei treinamentos e prestei auxílio aos técnicos da empresa em chamados externos controlados por SLA",
+                            instructor_exp1: "Ministrei cursos de sistemas operacionais Windows",
+                            instructor_exp2: "Ensinei Pacote Office",
+                            instructor_exp3: "Ministrei cursos de montagem e configuração de computadores",
+                            instructor_exp4: "Ensinei noções básicas de redes de computadores",
+                            elabore_exp1: "Assistência técnica em estações de trabalho Linux e Windows",
+                            elabore_exp2: "Gerenciamento de servidores Windows e Linux",
+                            elabore_exp3: "Rotinas de backup",
+                            elabore_exp4: "Gerenciamento do parque de impressão"
+                        }
+                    },
+                    en: {
+                        translation: {
+                            name: "Thiago Santana De Oliveira Marques",
+                            personal_info: "Brazilian, 35 years old, Married",
+                            qualifications_summary: "Qualifications Summary",
+                            qualifications_para1: "Professional graduated in Computer Science from the University of Brasília, with front-end development certification, with more than 15 years of experience in information technology, working in national and multinational companies of great size (Serpro, Fiocruz, Wiz Co, Stefanini, OmegaTI/Focus), standing out in the segments of insurance, IT services, digital transformation, technical support and sales of technological solutions.",
+                            qualifications_para2: "Experience in web application development using modern frameworks (Angular, React, Vue), in addition to extensive experience in REST API integrations, micro-frontend architecture, and implementation of agile practices such as Scrum. Mastery of tools and technologies such as Azure DevOps, SonarCloud, Jasmine for unit testing, and CI/CD pipelines for deployment in staging and production environments.",
+                            qualifications_para3: "Ability to create dynamic and responsive interfaces, development of reusable components and scalable solutions, aligning technical quality with best development practices. In addition, has experience in EAD projects, technical support, versioning with Git, and teaching programming logic in languages such as Python and JavaScript.",
+                            qualifications_para4: "Solid experience in IT infrastructure, including Windows and Linux server management, backup routines, system monitoring with tools such as NAGIOS, and specialized technical support. Knowledge in printing and documentation solutions (Xerox FreeFlow, Fiery), document management systems (Neokoros DOKEO), virtualization (VMware) and enterprise hardware (IBM System X).",
+                            qualifications_para5: "Highly qualified professional to work in teams, dedicated to functions and focused on results. Communicative, flexible, organized, responsible, with strong adaptability and continuous learning capacity.",
+                            keyword_web_dev: "Web Development",
+                            keyword_unit_tests: "Unit Testing",
+                            keyword_tech_support: "Technical Support",
+                            keyword_monitoring: "Monitoring",
+                            academic_formation: "Academic Formation",
+                            computer_science: "Computer Science Degree",
+                            unb_graduation: "University of Brasília – UnB | Completed in 2022",
+                            software_engineering: "Software Engineering Postgraduate",
+                            metropolitan_postgrad: "Metropolitan College | Completed in 2022",
+                            complementary_formation: "Complementary Formation",
+                            technical_knowledge: "Technical Knowledge",
+                            professional_experience: "Professional Experience",
+                            frontend_developer: "Front-End Developer",
+                            frontend_internship: "Front-End Development Internship",
+                            resident_teacher: "Resident Teacher",
+                            pedagogical_residency: "Pedagogical Residency",
+                            support_analyst: "Support Analyst",
+                            systems_analyst: "Systems Analyst",
+                            computer_instructor: "Computer Instructor",
+                            it_internship: "IT Internship",
+                            elabore_company: "E.Labore Strategic Environmental Consulting",
+                            languages: "Languages",
+                            english: "English",
+                            spanish: "Spanish",
+                            intermediate: "Intermediate",
+                            basic: "Basic",
+                            // Experience descriptions in English
+                            wiz_exp1: "I work in web application development using the Angular framework, REST API integration",
+                            wiz_exp2: "Use of good development practices, such as Lazy Loading, CommitLint and ESLint",
+                            wiz_exp3: "Participation in discussion groups about technologies for front-end use",
+                            wiz_exp4: "Use of Scrum and similar methodologies",
+                            wiz_exp5: "Use of Microsoft Azure technologies (Azure DevOps, Teams, Application Insights)",
+                            wiz_exp6: "Adaptation of projects to Sonar Cloud (Sonar Lint) for code quality and security",
+                            wiz_exp7: "Use of Jasmine for unit testing",
+                            wiz_exp8: "Structuring of new frontend applications",
+                            wiz_exp9: "Deployment of applications to staging and production environments",
+                            wiz_exp10: "Development of reusable components and modules in Angular, optimized for a Whitelabel and Multitenant system",
+                            wiz_exp11: "Integration of applications using micro-frontend architecture to promote modularity and scalability",
+                            wiz_exp12: "Pipeline adjustments for project deployments. SEO optimization and configuration, code review and optimization",
+                            fiocruz_exp1: "I worked developing educational solutions for integration with the Virtual Learning Environment (AVA/Moodle) using Bootstrap framework, PHP, HTML, CSS and Javascript",
+                            fiocruz_exp2: "Use of data persistence (PPU – UNASUS) in artifacts",
+                            fiocruz_exp3: "Creation of navigable prototypes",
+                            fiocruz_exp4: "Bug fixes and software updates",
+                            fiocruz_exp5: "JSON data consumption",
+                            fiocruz_exp6: "Creation of system documentation/manuals",
+                            fiocruz_exp7: "Artifact versioning using GIT",
+                            fiocruz_exp8: "Technical support for distance learning platforms (EAD) – AVA Moodle",
+                            serpro_exp1: "I worked as a FrontEnd developer assistant",
+                            serpro_exp2: "I developed components using HTML5, CSS3 and JavaScript using Angular, Bootstrap and IONIC framework to create navigable prototypes",
+                            serpro_exp3: "Creation of system documentation/manuals",
+                            serpro_exp4: "Artifact versioning using GIT",
+                            serpro_exp5: "Use of data persistence",
+                            serpro_exp6: "SQL database query (POSTGRE), NodeJS, Chrome DevTools",
+                            serpro_exp7: "Data consumption with REST/JSON",
+                            serpro_exp8: "Support for creating styles using SASS preprocessors",
+                            teacher_exp1: "I worked in the Pedagogical Residency Program in the Computer Science area teaching programming logic using Python, JavaScript, HTML and CSS",
+                            teacher_exp2: "Development of the GISNO school website",
+                            teacher_exp3: "Tutoring for teachers in general computer education",
+                            stefanini_exp1: "I worked as a support analyst, monitoring Caixa Econômica Federal network services",
+                            stefanini_exp2: "I used remote tools to maintain service availability, ensuring continuous operation without interruptions",
+                            stefanini_exp3: "I worked with availability verification tools, such as NAGIOS",
+                            stefanini_exp4: "I used remote tools for server verification, ensuring system efficiency and reliability",
+                            omegati_exp1: "I worked as a pre-sales and post-sales systems analyst to represent Xerox, Lexmark and Sharp brands",
+                            omegati_exp2: "My assignments ranged from analyzing tender documents for bidding to final customer support",
+                            omegati_exp3: "I conducted training and provided assistance to company technicians on external calls controlled by SLA",
+                            instructor_exp1: "I taught Windows operating system courses",
+                            instructor_exp2: "I taught Office Package",
+                            instructor_exp3: "I taught computer assembly and configuration courses",
+                            instructor_exp4: "I taught basic computer networking concepts",
+                            elabore_exp1: "Technical assistance on Linux and Windows workstations",
+                            elabore_exp2: "Windows and Linux server management",
+                            elabore_exp3: "Backup routines",
+                            elabore_exp4: "Printing park management"
+                        }
+                    },
+                    es: {
+                        translation: {
+                            name: "Thiago Santana De Oliveira Marques",
+                            personal_info: "Brasileño, 35 años, Casado",
+                            qualifications_summary: "Síntesis de Calificaciones",
+                            qualifications_para1: "Profesional graduado en Computación por la Universidad de Brasília, con certificación en desarrollo front-end, con más de 15 años de experiencia en el área de tecnología de la información, actuando en empresas nacionales y multinacionales de gran porte (Serpro, Fiocruz, Wiz Co, Stefanini, OmegaTI/Focus), destacándose en los segmentos de seguros, servicios en TI, transformación digital, soporte técnico y ventas de soluciones tecnológicas.",
+                            qualifications_para2: "Experiencia en desarrollo de aplicaciones web utilizando frameworks modernos (Angular, React, Vue), además de amplia experiencia en integraciones con APIs REST, arquitectura de micro-frontends, e implementación de prácticas ágiles como Scrum. Dominio en herramientas y tecnologías como Azure DevOps, SonarCloud, Jasmine para pruebas unitarias, y pipelines CI/CD para implantación en ambientes de homologación y producción.",
+                            qualifications_para3: "Habilidad en la creación de interfaces dinámicas y responsivas, desarrollo de componentes reutilizables y soluciones escalables, alineando calidad técnica con las mejores prácticas de desarrollo. Además, cuenta con experiencia en proyectos de EAD, soporte técnico, versionado con Git, y enseñanza de lógica de programación en lenguajes como Python y JavaScript.",
+                            qualifications_para4: "Experiencia sólida en infraestructura de TI, incluyendo gestión de servidores Windows y Linux, rutinas de backup, monitoreo de sistemas con herramientas como NAGIOS, y soporte técnico especializado. Conocimiento en soluciones de impresión y documentación (Xerox FreeFlow, Fiery), sistemas de gestión documental (Neokoros DOKEO), virtualización (VMware) y hardware empresarial (IBM System X).",
+                            qualifications_para5: "Profesional altamente capacitado para trabajar en equipo, dedicado a las funciones y enfocado en resultados. Comunicativo, flexible, organizado, responsable, con fuerte capacidad de adaptación y aprendizaje continuo.",
+                            keyword_web_dev: "Desarrollo Web",
+                            keyword_unit_tests: "Pruebas Unitarias",
+                            keyword_tech_support: "Soporte Técnico",
+                            keyword_monitoring: "Monitoreo",
+                            academic_formation: "Formación Académica",
+                            computer_science: "Graduación en Computación",
+                            unb_graduation: "Universidad de Brasília – UnB | Concluido en 2022",
+                            software_engineering: "Posgrado en Ingeniería de Software",
+                            metropolitan_postgrad: "Facultad Metropolitana | Concluido en 2022",
+                            complementary_formation: "Formación Complementaria",
+                            technical_knowledge: "Conocimientos Técnicos",
+                            professional_experience: "Experiencia Profesional",
+                            frontend_developer: "Desarrollador Front-End",
+                            frontend_internship: "Pasantía en desarrollo Front-End",
+                            resident_teacher: "Profesor Residente",
+                            pedagogical_residency: "Residencia Pedagógica",
+                            support_analyst: "Analista de Soporte",
+                            systems_analyst: "Analista de Sistemas",
+                            computer_instructor: "Instructor de Informática",
+                            it_internship: "Pasantía en el área de TI",
+                            elabore_company: "E.Labore Consultoría estratégica en medio ambiente",
+                            languages: "Idiomas",
+                            english: "Inglés",
+                            spanish: "Español",
+                            intermediate: "Intermedio",
+                            basic: "Básico",
+                            // Experience descriptions in Spanish
+                            wiz_exp1: "Actúo en el desarrollo de aplicaciones Web utilizando el framework Angular, integración con APIs (REST)",
+                            wiz_exp2: "Uso de buenas prácticas de desarrollo, como Lazy Loading, CommitLint y ESLint",
+                            wiz_exp3: "Participación en grupos de discusiones sobre tecnologías para uso en el front-end",
+                            wiz_exp4: "Uso de metodologías Scrum y semejantes",
+                            wiz_exp5: "Uso de tecnologías de Microsoft Azure (Azure DevOps, Teams, Application Insights)",
+                            wiz_exp6: "Adecuación de los proyectos al Sonar Cloud (Sonar Lint) para calidad y seguridad del código",
+                            wiz_exp7: "Uso de Jasmine para pruebas unitarias",
+                            wiz_exp8: "Estructuración de nuevas aplicaciones frontend",
+                            wiz_exp9: "Deploy de aplicaciones para ambientes de homologación y producción",
+                            wiz_exp10: "Desarrollo de componentes y módulos reutilizables en Angular, optimizados para un sistema Whitelabel y Multitenant",
+                            wiz_exp11: "Integración de aplicaciones utilizando arquitectura de micro-frontend para promover modularidad y escalabilidad",
+                            wiz_exp12: "Ajustes en el pipeline para subidas de los proyectos. Optimización y configuración de SEO, revisión y optimización de códigos",
+                            fiocruz_exp1: "Actué desarrollando soluciones educacionales para integración con el Ambiente Virtual de Aprendizaje (AVA/Moodle) utilizando framework Bootstrap, PHP, HTML, CSS y Javascript",
+                            fiocruz_exp2: "Uso de persistencia de datos (PPU – UNASUS) en los artefactos",
+                            fiocruz_exp3: "Creación de prototipos navegables",
+                            fiocruz_exp4: "Corrección de bugs y actualización de software",
+                            fiocruz_exp5: "Consumo de datos JSON",
+                            fiocruz_exp6: "Creación de documentaciones/manuales de sistemas",
+                            fiocruz_exp7: "Versionado de artefactos usando GIT",
+                            fiocruz_exp8: "Apoyo técnico para plataformas de enseñanza a distancia (EAD) – AVA Moodle",
+                            serpro_exp1: "Actué como auxiliar de desarrollador FrontEnd",
+                            serpro_exp2: "Desarrollé componentes usando HTML5, CSS3 y JavaScript utilizando framework Angular, Bootstrap e IONIC para crear prototipos navegables",
+                            serpro_exp3: "Creación de documentaciones/manuales de sistemas",
+                            serpro_exp4: "Versionado de artefactos usando GIT",
+                            serpro_exp5: "Uso de persistencia de datos",
+                            serpro_exp6: "Consulta en banco de datos SQL (POSTGRE), NodeJS, Chrome DevTools",
+                            serpro_exp7: "Consumo de datos con REST/JSON",
+                            serpro_exp8: "Apoyo para creación de estilos usando preprocesadores SASS",
+                            teacher_exp1: "Actué en el Programa de Residencia Pedagógica en el área de Computación enseñando lógica de programación utilizando Python, JavaScript, HTML y CSS",
+                            teacher_exp2: "Desarrollo del sitio web de la escuela GISNO",
+                            teacher_exp3: "Tutoría para profesores en la enseñanza general de computación",
+                            stefanini_exp1: "Actué como analista de soporte, monitoreando servicios de red de la Caixa Económica Federal",
+                            stefanini_exp2: "Utilicé herramientas remotas para mantener la disponibilidad de los servicios, garantizando un funcionamiento continuo y sin interrupciones",
+                            stefanini_exp3: "Trabajé con herramientas de verificación de disponibilidad, como NAGIOS",
+                            stefanini_exp4: "Utilicé herramientas remotas para la verificación de servidores, asegurando la eficiencia y la confiabilidad de los sistemas",
+                            omegati_exp1: "Actué como analista de sistemas pre-venta y post-venta para representar las marcas Xerox, Lexmark y Sharp",
+                            omegati_exp2: "Mis atribuciones eran desde el análisis de edital para concurrencia en licitaciones hasta el soporte final a los clientes",
+                            omegati_exp3: "Ministré entrenamientos y presté auxilio a los técnicos de la empresa en llamados externos controlados por SLA",
+                            instructor_exp1: "Ministré cursos de sistemas operativos Windows",
+                            instructor_exp2: "Enseñé Paquete Office",
+                            instructor_exp3: "Ministré cursos de montaje y configuración de computadoras",
+                            instructor_exp4: "Enseñé nociones básicas de redes de computadoras",
+                            elabore_exp1: "Asistencia técnica en estaciones de trabajo Linux y Windows",
+                            elabore_exp2: "Gestión de servidores Windows y Linux",
+                            elabore_exp3: "Rutinas de backup",
+                            elabore_exp4: "Gestión del parque de impresión"
+                        }
+                    }
+                }
+            });
+
+        // Function to update content
+        function updateContent() {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                element.textContent = i18next.t(key);
+            });
+        }
+
+        // Language switcher functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set initial language
+            updateContent();
+            
+            // Language switcher event listeners
+            document.querySelectorAll('.language-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all buttons
+                    document.querySelectorAll('.language-btn').forEach(b => b.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Change language
+                    const lang = this.getAttribute('data-lang');
+                    i18next.changeLanguage(lang).then(() => {
+                        updateContent();
+                        document.documentElement.lang = lang;
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
