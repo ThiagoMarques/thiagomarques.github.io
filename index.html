@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiago Santana De Oliveira Marques - Desenvolvedor Front-End</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .section {
+            padding: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section h2 {
+            color: #667eea;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .objective {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .keyword {
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+        }
+
+        .education-item, .course-item {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            border-left: 3px solid #667eea;
+        }
+
+        .education-item h3, .course-item h3 {
+            color: #333;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .education-item p, .course-item p {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .skill {
+            background: #e9ecef;
+            color: #495057;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            border: 1px solid #dee2e6;
+        }
+
+        .experience-item {
+            margin-bottom: 30px;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .experience-title {
+            font-size: 1.2em;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .experience-period {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .experience-company {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .experience-description {
+            margin-left: 20px;
+        }
+
+        .experience-description li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .languages {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .language-item {
+            background: #f8f9fa;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+
+        .language-name {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .language-level {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+
+            .skills {
+                gap: 8px;
+            }
+
+            .skill {
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Thiago Santana De Oliveira Marques</h1>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>Asa Norte - Brasília - DF</span>
+                </div>
+                <div class="contact-item">
+                    <span>📞</span>
+                    <span>(61) 9 9922-0194</span>
+                </div>
+                <div class="contact-item">
+                    <span>✉️</span>
+                    <a href="mailto:thiagossmarques@gmail.com">thiagossmarques@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span>🔗</span>
+                    <a href="https://www.linkedin.com/in/thiagossmarques/" target="_blank">LinkedIn</a>
+                </div>
+                <div class="contact-item">
+                    <span>💻</span>
+                    <a href="https://github.com/thiagomarques" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.9em;">Brasileiro, 34 anos, Casado</p>
+        </div>
+
+        <div class="section">
+            <h2>Objetivo</h2>
+            <div class="objective">
+                <strong>Desenvolvedor Front-End</strong>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Síntese das Qualificações</h2>
+            <p>Profissional graduado em Computação pela Universidade de Brasília, com certificação em desenvolvimento front-end, com mais de 7 anos de experiência na área de desenvolvimento web, atuando em empresas nacionais e multinacionais de grande porte (Serpro, Fiocruz, Wiz Co), destacando-se os segmentos de seguros, serviços em TI, transformação digital.</p>
+            
+            <p>Experiência em desenvolvimento de aplicações web utilizando frameworks modernos (Angular, React, Vue), além de ampla experiência em integrações com APIs REST, arquitetura de micro-frontends, e implementação de práticas ágeis como Scrum. Domínio em ferramentas e tecnologias como Azure DevOps, SonarCloud, Jasmine para testes unitários, e pipelines CI/CD para implantação em ambientes de homologação e produção.</p>
+            
+            <p>Habilidade na criação de interfaces dinâmicas e responsivas, desenvolvimento de componentes reutilizáveis e soluções escaláveis, alinhando qualidade técnica com as melhores práticas de desenvolvimento. Além disso, conta com experiência em projetos de EAD, suporte técnico, versionamento com Git, e ensino de lógica de programação em linguagens com Python e JavaScript.</p>
+            
+            <p>Profissional altamente capacitado para trabalhar em equipe, dedicado às funções e focado em resultados. Comunicativo, flexível, organizado, responsável.</p>
+
+            <div class="keywords">
+                <span class="keyword">Desenvolvimento Web</span>
+                <span class="keyword">Angular</span>
+                <span class="keyword">React</span>
+                <span class="keyword">Vue</span>
+                <span class="keyword">Angular Material</span>
+                <span class="keyword">Bootstrap</span>
+                <span class="keyword">Micro-frontend</span>
+                <span class="keyword">APIs REST</span>
+                <span class="keyword">Scrum</span>
+                <span class="keyword">Azure DevOps</span>
+                <span class="keyword">SonarCloud</span>
+                <span class="keyword">Testes Unitários</span>
+                <span class="keyword">CI/CD</span>
+                <span class="keyword">TypeScript</span>
+                <span class="keyword">JavaScript</span>
+                <span class="keyword">HTML5</span>
+                <span class="keyword">CSS3</span>
+                <span class="keyword">NodeJS</span>
+                <span class="keyword">Git</span>
+                <span class="keyword">PostgreSQL</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Formação Acadêmica</h2>
+            <div class="education-item">
+                <h3>Graduação em Computação</h3>
+                <p>Universidade de Brasília – UnB | Concluído em 2022</p>
+            </div>
+            <div class="education-item">
+                <h3>Pós-graduação em Engenharia de Software</h3>
+                <p>Faculdade Metropolitana | Concluído em 2022</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Formação Complementar</h2>
+            <div class="course-item">
+                <h3>Lógica Orientada a Objetos</h3>
+                <p>Treinaweb</p>
+            </div>
+            <div class="course-item">
+                <h3>Intro to Python for Data Science</h3>
+                <p>Datacamp</p>
+            </div>
+            <div class="course-item">
+                <h3>Introduction to R Course</h3>
+                <p>Datacamp</p>
+            </div>
+            <div class="course-item">
+                <h3>PHP com MySQL</h3>
+                <p>Eibneti</p>
+            </div>
+            <div class="course-item">
+                <h3>Programa de Residência Pedagógica</h3>
+                <p>CAPES</p>
+            </div>
+            <div class="course-item">
+                <h3>Desenvolvedor Front-End</h3>
+                <p>Gama Academy</p>
+            </div>
+            <div class="course-item">
+                <h3>Bootcamp - Desenvolvedor Front End</h3>
+                <p>IGTI</p>
+            </div>
+            <div class="course-item">
+                <h3>Testes Unitários com Javascript</h3>
+                <p>Udemy</p>
+            </div>
+            <div class="course-item">
+                <h3>Angular Fundamentals from Scratch & Unit/Integration Testing</h3>
+                <p>Udemy</p>
+            </div>
+            <div class="course-item">
+                <h3>Angular Testing Master Class</h3>
+                <p>Udemy</p>
+            </div>
+            <div class="course-item">
+                <h3>SEO para desenvolvedores</h3>
+                <p>Udemy</p>
+            </div>
+            <div class="course-item">
+                <h3>RXJS 7</h3>
+                <p>Udemy</p>
+            </div>
+            <div class="course-item">
+                <h3>Fundamentos da Segurança da Informação e CyberSegurança</h3>
+            </div>
+            <div class="course-item">
+                <h3>Modelagem de Dados em Banco de Dados Relacional</h3>
+            </div>
+            <div class="course-item">
+                <h3>React Native e TypeScript para criação de Apps Android e iOS</h3>
+            </div>
+            <div class="course-item">
+                <h3>MongoDB</h3>
+            </div>
+            <div class="course-item">
+                <h3>C# Básico</h3>
+            </div>
+            <div class="course-item">
+                <h3>Fullstack Angular Java</h3>
+            </div>
+            <div class="course-item">
+                <h3>Conceitos de BigData e Inteligência Artificial</h3>
+            </div>
+            <div class="course-item">
+                <h3>SQL para Análise de Dados</h3>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Conhecimentos Técnicos</h2>
+            <div class="skills">
+                <span class="skill">Git</span>
+                <span class="skill">IONIC</span>
+                <span class="skill">Angular</span>
+                <span class="skill">React</span>
+                <span class="skill">Vue</span>
+                <span class="skill">HTML</span>
+                <span class="skill">CSS</span>
+                <span class="skill">JavaScript</span>
+                <span class="skill">TypeScript</span>
+                <span class="skill">SASS</span>
+                <span class="skill">LESS</span>
+                <span class="skill">NodeJS</span>
+                <span class="skill">PHP</span>
+                <span class="skill">SEO</span>
+                <span class="skill">SQL</span>
+                <span class="skill">Bootstrap</span>
+                <span class="skill">Material</span>
+                <span class="skill">JSON</span>
+                <span class="skill">RXJS</span>
+                <span class="skill">Wordpress</span>
+                <span class="skill">Azure</span>
+                <span class="skill">AWS</span>
+                <span class="skill">Firebase</span>
+                <span class="skill">NOSQL</span>
+                <span class="skill">MongoDB</span>
+                <span class="skill">SonarQube</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Experiência Profissional</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="experience-title">Desenvolvedor Front-End</div>
+                    <div class="experience-period">09/2021 - Atual</div>
+                </div>
+                <div class="experience-company">WIZ CO</div>
+                <ul class="experience-description">
+                    <li>Atuo no desenvolvimento de aplicações Web utilizando o framework Angular, integração com API's (REST)</li>
+                    <li>Uso de boas práticas de desenvolvimento, como Lazy Loading, CommitLint e ESLint</li>
+                    <li>Participação de grupos de discussões sobre tecnologias para uso no front-end</li>
+                    <li>Uso de metodologias Scrum e semelhantes</li>
+                    <li>Uso de tecnologias do Microsoft Azure (Azure Devops, Teams, Application Insigths)</li>
+                    <li>Adequação dos projetos ao Sonar Cloud (Sonar Lint) para qualidade e segurança do código</li>
+                    <li>Uso de Jasmine para testes unitários</li>
+                    <li>Estruturação de novas aplicações frontend</li>
+                    <li>Deploy de aplicações para ambientes de homologação e produção</li>
+                    <li>Desenvolvimento de componentes e módulos reutilizáveis em Angular, otimizados para um sistema Whitelabel e Multitenant</li>
+                    <li>Integração de aplicações utilizando arquitetura de micro-frontend para promover modularidade e escalabilidade</li>
+                    <li>Ajustes no pipeline para subidas dos projetos. Otimização e configuração de SEO, revisão e otimização de códigos</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="experience-title">Desenvolvedor Front-End</div>
+                    <div class="experience-period">02/2020 - 09/2021</div>
+                </div>
+                <div class="experience-company">FIOCRUZ</div>
+                <ul class="experience-description">
+                    <li>Atuei desenvolvendo soluções educacionais para integração com o Ambiente Virtual de Aprendizagem (AVA/Moodle) utilizando framework Bootstrap, PHP, HTML, CSS e Javascript</li>
+                    <li>Uso de persistência de dados (PPU – UNASUS) nos artefatos</li>
+                    <li>Criação de protótipos navegáveis</li>
+                    <li>Correção de bugs e atualização de software</li>
+                    <li>Consumo de dados JSON</li>
+                    <li>Criação de documentações/manuais de sistemas</li>
+                    <li>Versionamento de artefatos usando GIT</li>
+                    <li>Apoio técnico para plataformas de ensino a distância (EAD) – AVA Moodle</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="experience-title">Estágio em desenvolvimento Front-End</div>
+                    <div class="experience-period">02/2020 - 09/2021</div>
+                </div>
+                <div class="experience-company">SERPRO</div>
+                <ul class="experience-description">
+                    <li>Atuei como auxiliar de desenvolvedor FrontEnd</li>
+                    <li>Desenvolvi componentes usando HTML5, CSS3 e JavaScript utilizando framework Angular, Bootstrap e IONIC para criar protótipos navegáveis</li>
+                    <li>Criação de documentações/manuais de sistemas</li>
+                    <li>Versionamento de artefatos usando GIT</li>
+                    <li>Uso de persistência de dados</li>
+                    <li>Consulta em banco de dados SQL (POSTGRE), NodeJS, Chrome DevTools</li>
+                    <li>Consumo de dados com REST/JSON</li>
+                    <li>Apoio para criação de estilos usando pré-processadores SASS</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="experience-title">Professor Residente</div>
+                    <div class="experience-period">09/2018 - 01/2021</div>
+                </div>
+                <div class="experience-company">Residência Pedagógica</div>
+                <ul class="experience-description">
+                    <li>Atuei no Programa de Residência Pedagógica na área de Computação ensinando lógica de programação utilizando Python, JavaScript, HTML e CSS</li>
+                    <li>Desenvolvimento do site da escola GISNO</li>
+                    <li>Tutoria para professores no ensino geral de computação</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Idiomas</h2>
+            <div class="languages">
+                <div class="language-item">
+                    <div class="language-name">Inglês</div>
+                    <div class="language-level">Intermediário</div>
+                </div>
+                <div class="language-item">
+                    <div class="language-name">Espanhol</div>
+                    <div class="language-level">Básico</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
