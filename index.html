@@ -34,6 +34,43 @@
             position: relative;
         }
 
+        .header-controls {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .print-btn {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 6px;
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: white;
+            text-decoration: none;
+            font-size: 0.85em;
+            min-width: 100px;
+            justify-content: center;
+        }
+
+        .print-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .print-icon {
+            font-size: 16px;
+        }
+
         .language-switcher {
             position: absolute;
             top: 20px;
@@ -242,6 +279,11 @@
                 font-size: 2em;
             }
 
+            .print-btn {
+                position: static;
+                margin-bottom: 15px;
+            }
+
             .language-switcher {
                 position: static;
                 justify-content: center;
@@ -281,37 +323,15 @@
             margin-top: 20px;
             margin-bottom: 25px;
         }
-
-        .print-btn {
-            background: rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 6px;
-            padding: 8px 12px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            color: white;
-            text-decoration: none;
-            font-size: 0.85em;
-            min-width: 100px;
-            justify-content: center;
-        }
-
-        .print-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .print-icon {
-            font-size: 16px;
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
+            <a href="#" class="print-btn" id="printBtn">
+                <span class="print-icon">🖨️</span>
+                PDF
+            </a>
             <div class="language-switcher">
                 <a href="#" class="language-btn active" data-lang="pt">
                     <span class="flag-icon fi fi-br"></span>
@@ -324,12 +344,6 @@
                 <a href="#" class="language-btn" data-lang="es">
                     <span class="flag-icon fi fi-es"></span>
                     Español
-                </a>
-            </div>
-            <div style="position: absolute; top: 20px; left: 30px;">
-                <a href="#" class="print-btn" id="printBtn">
-                    <span class="print-icon">🖨️</span>
-                    PDF
                 </a>
             </div>
             <h1 data-i18n="name">Thiago Santana De Oliveira Marques</h1>
@@ -363,6 +377,8 @@
             <p data-i18n="qualifications_para3">Habilidade na criação de interfaces dinâmicas e responsivas, desenvolvimento de componentes reutilizáveis e soluções escaláveis, alinhando qualidade técnica com as melhores práticas de desenvolvimento. Além disso, conta com experiência em projetos de EAD, suporte técnico, versionamento com Git, e ensino de lógica de programação em linguagens com Python e JavaScript.</p>
             
             <p data-i18n="qualifications_para4">Experiência sólida em infraestrutura de TI, incluindo gerenciamento de servidores Windows e Linux, rotinas de backup, monitoramento de sistemas com ferramentas como NAGIOS, e suporte técnico especializado. Conhecimento em soluções de impressão e documentação (Xerox FreeFlow, Fiery), sistemas de gestão documental (Neokoros DOKEO), virtualização (VMware) e hardware empresarial (IBM System X).</p>
+            
+            <p data-i18n="qualifications_para4_5">Experiência em processos de licitação e concorrência pública, atuando na análise de editais, elaboração de propostas técnicas e comerciais, e participação em pregões eletrônicos. Desenvolvimento de habilidades em gestão de contratos, compliance regulatório e relacionamento com órgãos públicos, contribuindo para o sucesso em projetos governamentais e empresariais.</p>
             
             <p data-i18n="qualifications_para5" class="qualifications_para5">Profissional altamente capacitado para trabalhar em equipe, dedicado às funções e focado em resultados. Comunicativo, flexível, organizado, responsável, com forte capacidade de adaptação e aprendizado contínuo.</p>
 
@@ -725,6 +741,7 @@
                             qualifications_para2: "Experiência em desenvolvimento de aplicações web utilizando frameworks modernos (Angular, React, Vue), além de ampla experiência em integrações com APIs REST, arquitetura de micro-frontends, e implementação de práticas ágeis como Scrum. Domínio em ferramentas e tecnologias como Azure DevOps, SonarCloud, Jasmine para testes unitários, e pipelines CI/CD para implantação em ambientes de homologação e produção.",
                             qualifications_para3: "Habilidade na criação de interfaces dinâmicas e responsivas, desenvolvimento de componentes reutilizáveis e soluções escaláveis, alinhando qualidade técnica com as melhores práticas de desenvolvimento. Além disso, conta com experiência em projetos de EAD, suporte técnico, versionamento com Git, e ensino de lógica de programação em linguagens com Python e JavaScript.",
                             qualifications_para4: "Experiência sólida em infraestrutura de TI, incluindo gerenciamento de servidores Windows e Linux, rotinas de backup, monitoramento de sistemas com ferramentas como NAGIOS, e suporte técnico especializado. Conhecimento em soluções de impressão e documentação (Xerox FreeFlow, Fiery), sistemas de gestão documental (Neokoros DOKEO), virtualização (VMware) e hardware empresarial (IBM System X).",
+                            qualifications_para4_5: "Experiência em processos de licitação e concorrência pública, atuando na análise de editais, elaboração de propostas técnicas e comerciais, e participação em pregões eletrônicos. Desenvolvimento de habilidades em gestão de contratos, compliance regulatório e relacionamento com órgãos públicos, contribuindo para o sucesso em projetos governamentais e empresariais.",
                             qualifications_para5: "Profissional altamente capacitado para trabalhar em equipe, dedicado às funções e focado em resultados. Comunicativo, flexível, organizado, responsável, com forte capacidade de adaptação e aprendizado contínuo.",
                             keyword_web_dev: "Desenvolvimento Web",
                             keyword_unit_tests: "Testes Unitários",
@@ -810,6 +827,7 @@
                             qualifications_para2: "Experience in web application development using modern frameworks (Angular, React, Vue), in addition to extensive experience in REST API integrations, micro-frontend architecture, and implementation of agile practices such as Scrum. Mastery of tools and technologies such as Azure DevOps, SonarCloud, Jasmine for unit testing, and CI/CD pipelines for deployment in staging and production environments.",
                             qualifications_para3: "Ability to create dynamic and responsive interfaces, development of reusable components and scalable solutions, aligning technical quality with best development practices. In addition, has experience in EAD projects, technical support, versioning with Git, and teaching programming logic in languages such as Python and JavaScript.",
                             qualifications_para4: "Solid experience in IT infrastructure, including Windows and Linux server management, backup routines, system monitoring with tools such as NAGIOS, and specialized technical support. Knowledge in printing and documentation solutions (Xerox FreeFlow, Fiery), document management systems (Neokoros DOKEO), virtualization (VMware) and enterprise hardware (IBM System X).",
+                            qualifications_para4_5: "Experience in bidding participation and public competition, working in the analysis of tenders, technical and commercial proposal preparation, and participation in electronic auctions. Development of skills in contract management, regulatory compliance and relationship with public bodies, contributing to success in government and business projects.",
                             qualifications_para5: "Highly qualified professional to work in teams, dedicated to functions and focused on results. Communicative, flexible, organized, responsible, with strong adaptability and continuous learning capacity.",
                             keyword_web_dev: "Web Development",
                             keyword_unit_tests: "Unit Testing",
@@ -895,6 +913,7 @@
                             qualifications_para2: "Experiencia en desarrollo de aplicaciones web utilizando frameworks modernos (Angular, React, Vue), además de amplia experiencia en integraciones con APIs REST, arquitectura de micro-frontends, e implementación de prácticas ágiles como Scrum. Dominio en herramientas y tecnologías como Azure DevOps, SonarCloud, Jasmine para pruebas unitarias, y pipelines CI/CD para implantación en ambientes de homologación y producción.",
                             qualifications_para3: "Habilidad en la creación de interfaces dinámicas y responsivas, desarrollo de componentes reutilizables y soluciones escalables, alineando calidad técnica con las mejores prácticas de desarrollo. Además, cuenta con experiencia en proyectos de EAD, soporte técnico, versionado con Git, y enseñanza de lógica de programación en lenguajes como Python y JavaScript.",
                             qualifications_para4: "Experiencia sólida en infraestructura de TI, incluyendo gestión de servidores Windows y Linux, rutinas de backup, monitoreo de sistemas con herramientas como NAGIOS, y soporte técnico especializado. Conocimiento en soluciones de impresión y documentación (Xerox FreeFlow, Fiery), sistemas de gestión documental (Neokoros DOKEO), virtualización (VMware) y hardware empresarial (IBM System X).",
+                            qualifications_para4_5: "Experiencia en procesos de licitación y concurrencia pública, actuando en la análisis de ofertas, preparación de propuestas técnicas y comerciales, y participación en subastas electrónicas. Desarrollo de habilidades en gestión de contratos, cumplimiento regulatorio y relación con organismos públicos, contribuyendo al éxito en proyectos gubernamentales y empresariales.",
                             qualifications_para5: "Profesional altamente capacitado para trabajar en equipo, dedicado a las funciones y enfocado en resultados. Comunicativo, flexible, organizado, responsable, con fuerte capacidad de adaptación y aprendizaje continuo.",
                             keyword_web_dev: "Desarrollo Web",
                             keyword_unit_tests: "Pruebas Unitarias",
@@ -950,7 +969,7 @@
                             serpro_exp5: "Uso de persistencia de datos",
                             serpro_exp6: "Consulta en banco de datos SQL (POSTGRE), NodeJS, Chrome DevTools",
                             serpro_exp7: "Consumo de datos con REST/JSON",
-                            serpro_exp8: "Apoyo para creación de estilos usando preprocesadores SASS",
+                            serpro_exp8: "Apoyo para creación de estilos usando préprocesadores SASS",
                             teacher_exp1: "Actué en el Programa de Residencia Pedagógica en el área de Computación enseñando lógica de programación utilizando Python, JavaScript, HTML y CSS",
                             teacher_exp2: "Desarrollo del sitio web de la escuela GISNO",
                             teacher_exp3: "Tutoría para profesores en la enseñanza general de computación",
